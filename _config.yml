@@ -18,15 +18,15 @@
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
 
-title: Jiwhun Kim
-email: jiwhun.kim@outlook.com
+title: Kangmin Kim
+email: amazon7737@gmail.com
 description: >- # this means to ignore newlines until "baseurl:"
   Write an awesome description for your new site here. You can edit this
   line in _config.yml. It will appear in your document head meta (for
   Google search results) and in your feed.xml site description.
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
-github_username:  jiwhunkim
+github_username:  kangminkim
 
 # Build settings
 theme: minima
@@ -37,7 +37,7 @@ comments:
   provider: "giscus"
 
 giscus:
-  repo:                "jiwhunkim/jiwhunkim.github.io"
+  repo:                "amazon7737/amazon7737.github.io"
   repo-id:             "R_kgDOJcwGPg"
   category:            "Comments"
   category-id:         "DIC_kwDOJcwGPs4CWI0m"
