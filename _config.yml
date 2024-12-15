@@ -37,19 +37,18 @@ comments:
   provider: "giscus"
 
 giscus:
-  repo:                "amazon7737/amazon7737.github.io"
-  repo-id:             "R_kgDOJcwGPg"
-  category:            "Comments"
-  category-id:         "DIC_kwDOJcwGPs4CWI0m"
-  mapping:             "pathname"
-  reaction-enabled:    "1"
-  theme:               "light"
-  crossorigin:         "anonymous"
-  lang:                "en"
-  strict:              "0"
-  emit-metadata:       "0"
-  input-position:      "bottom"
-
+  repo: "amazon7737/johns-blog"
+  repo-id: "R_kgDOJcwGPg"
+  category: "Comments"
+  category-id: "DIC_kwDOJcwGPs4CWI0m"
+  mapping: "pathname"
+  reaction-enabled: "1"
+  theme: "light"
+  crossorigin: "anonymous"
+  lang: "en"
+  strict: "0"
+  emit-metadata: "0"
+  input-position: "bottom"
 # Exclude from processing.
 # The following items will not be processed, by default.
 # Any item listed under the `exclude:` key here will be automatically added to
