@@ -3,7 +3,7 @@ layout: post
 title: github 커밋하기
 tags: ["study"]
 date: 2023-12-20T00:00:00+09:00
-key: github
+key: 2023-12-20 post
 ---
 # Git 사용법
 > git을 사용하며 자주 사용하는 명령어들을 모아놓았음
