@@ -37,7 +37,7 @@ comments:
   provider: "giscus"
 
 giscus:
-  repo: "amazon7737/johns-blog"
+  repo: "amazon7737/amazon7737.github.io"
   repo-id: "R_kgDOJcwGPg"
   category: "Comments"
   category-id: "DIC_kwDOJcwGPs4CWI0m"
