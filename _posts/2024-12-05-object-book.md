@@ -6,7 +6,7 @@ date: 2024-12-05T00:00:00+09:00
 key: 2024-11-05 study
 ---
 
-<img src = "https://raw.githubusercontent.com/amazon7737/amazon7737.github.io/refs/heads/main/images/image.png" width="70%" height="70%">
+<img src = "https://raw.githubusercontent.com/amazon7737/amazon7737.github.io/refs/heads/main/images/image.png" width="60%" height="60%">
 
 
 ## ch02를 읽으며 기록한 문장들
