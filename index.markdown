@@ -5,4 +5,4 @@
 layout: home
 ---
 
-<img src = "./orange_.gif" />
+<img src = "../images/orange_.gif" />
