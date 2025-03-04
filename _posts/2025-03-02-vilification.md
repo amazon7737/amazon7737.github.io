@@ -213,9 +213,9 @@ Chat GPT API 의 지역은 한국으로 설정되어있었다.
 2025-02-27T11:44:05.787Z  INFO 1 --- [class-review-vilification] [nio-8080-exec-3] c.e.c.ChatClientProvider                 : ====== 결과 ===== ChatResponse [metadata={ id: chatcmpl-B5Wb7rh6Wx8AXedYmMDBInXZLLPhN, usage: DefaultUsage{promptTokens=203, completionTokens=2, totalTokens=205}, rateLimit: { @type: org.springframework.ai.openai.metadata.OpenAiRateLimit, requestsLimit: 10000, requestsRemaining: 9999, requestsReset: PT1M4S, tokensLimit: 200000; tokensRemaining: 199792; tokensReset: PT0.062S } }, generations=[Generation[assistantMessage=AssistantMessage [messageType=ASSISTANT, toolCalls=[], textContent=false, metadata={refusal=, finishReason=STOP, index=0, id=chatcmpl-B5Wb7rh6Wx8AXedYmMDBInXZLLPhN, role=ASSISTANT, messageType=ASSISTANT}], chatGenerationMetadata=DefaultChatGenerationMetadata[finishReason='STOP', filters=0, metadata=0]]]] 
 ```
 
+
+### 결론
+
 변경한 인스턴스에서는 정상적으로 진행되는 것을 확인하였고, 인스턴스의 지역 문제가 open ai api의 연동에 문제를 일으켰다는 것으로 해결되었다.
 
 간단한 문제였기도 하였지만, 에러의 원인을 찾기위해서 차근차근 예외 내역을 찾아들어가며 사용되는 클래스들의 동작을 따라가보는 과정에서 HTTP RestTemplate 의 동작 순서에 대해서 이해해보는 경험을 하게 되었다.
-
-
-
