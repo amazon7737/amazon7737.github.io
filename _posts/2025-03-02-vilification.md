@@ -46,9 +46,7 @@ Caddy Web Server를 통하여 HTTPS 로 요청을 가능하게하여 Reverse Pro
 
 Docker Container를 사용하여 환경의 이질감을 가지고 있지 않다고 판단하였다. 하지만 에러는 이미 발생하였고, Local 환경과의 차이가 분명히 존재한다고 생각하였고 차근차근히 에러 원인을 찾기위해 에러를 쫓아가 보았다.
 
-#### Tracing
-
-** 코드와 설명 쭉쭉 **
+### Tracing
 
 #### DefaultRestClient 에러 발생
 
