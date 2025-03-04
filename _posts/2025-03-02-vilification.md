@@ -1,12 +1,11 @@
 ---
 layout: post
-title: [트러블슈팅] open ai api 통신 문제 디버깅 과정
+title: 트러블슈팅 open ai api 통신 문제 디버깅 과정
 tags: ["study"]
 date: 2025-03-02T00:00:00+09:00
 key: 2025-03-02 post
 ---
 
-## open ai api 연동 중 발생한 문제 원인 디버깅 과정
 > open ai api를 통해서 원하는 프롬프트 응답 기능을 배포하던 도중 발생한 문제 원인을 찾기위한 디버깅 과정에 대해서 정리하였습니다.
 
 ## 배포 서버 환경
