@@ -23,7 +23,7 @@ open ai api를 활용한 요청과 응답 구조를 위해 배포 환경을 아�
 
 ## 시스템 구조
 
-<img src = "../images/2025-03-02-openaiapi-통신해결과정1.png" width="60%" height="60%">
+<img src = "https://raw.githubusercontent.com/amazon7737/amazon7737.github.io/refs/heads/main/images/2025-03-02-openaiapi-%ED%86%B5%EC%8B%A0%ED%95%B4%EA%B2%B0%EA%B3%BC%EC%A0%951.png" width="60%" height="60%">
 
 Caddy Web Server를 통하여 HTTPS 로 요청을 가능하게하여 Reverse Proxy를 받아 Spring AI 서버가 요청을 받고 open ai api 에게 제목과 게시글을 전달하여 욕설을 검사하고 boolean 값을 반환받도록 하였다.
 
