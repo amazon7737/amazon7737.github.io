@@ -17,7 +17,7 @@ key: 2025-03-05 study
 
 ## 단일 서버
 
-![[Pasted image 20250321004615.png]]
+![image](https://github.com/user-attachments/assets/efd33549-b6f5-4a55-bf44-94aa78a1a792)
 
 1. 사용자는 도메인 이름을 이용하여 웹사이트에 접속한다. 이 접속을 위해서는 도메인 이름을 도메인 이름 서비스에 질의하여 IP 주소로 변환하는 과정이 필요하다.
 2. DNS 조회로 웹 서버의 IP 주소가 반환된다.
@@ -28,7 +28,7 @@ key: 2025-03-05 study
 
 사용자가 늘어나면 서버 하나로는 충분하지 않아 서버를 여러개로 두어야 한다. 하나는 웹 / 모바일 트래픽 처리 용도고, 다른 하나는 데이터베이스 용이다.
 
-![[Pasted image 20250321005232.png]]
+![image](https://github.com/user-attachments/assets/d03c296e-a9aa-4f15-a4ce-869270706896)
 
 RDBMS, NoSQL 2가지로 나눌 수 있다.
 
@@ -68,7 +68,7 @@ RDBMS, NoSQL 2가지로 나눌 수 있다.
 
 ## 로드밸런서
 
-![[Pasted image 20250321011110.png]]
+![image](https://github.com/user-attachments/assets/f773167c-0376-49b7-b447-83901b6a9bc5)
 
 사용자는 로드밸런서의 `Public IP` 로 접속한다. 서버 간 통신에는 `Private IP` 가 이용된다. 위처럼 스케일 아웃을 통해서 서버를 여러 대로 늘리게 되면 no failover도 해소할 수 있고, 웹 계층의 가용성은 향상된다.
 
@@ -85,7 +85,7 @@ RDBMS, NoSQL 2가지로 나눌 수 있다.
 
 데이터베이스를 `Master-Slave`로 나누는데 `쓰기 연산`은 `Master`에서만 지원하고, `읽기 연산`은 `Slave`에서만 지원한다. 대부분의 애플리케이션에서는 `쓰기 작업`보다는 `읽기 작업`이 훨씬 많기 때문에 Slave 데이터베이스가 훨씬 많다.
 
-![[Pasted image 20250321094809.png]]
+![image](https://github.com/user-attachments/assets/b46b6ca2-70ab-489a-b000-b4993960152c)
 
 `select`는 slave DB
 `update`는 master DB
@@ -114,7 +114,7 @@ RDBMS, NoSQL 2가지로 나눌 수 있다.
 
 ## 로드밸런서와 데이터베이스 다중화
 
-![[Pasted image 20250321101302.png]]
+![image](https://github.com/user-attachments/assets/530e1f6f-a236-4860-a9bb-466aa104f29b)
 
 
 1. 사용자는 DNS로부터 로드밸런서의 공개 IP 주소를 받는다.
@@ -132,7 +132,7 @@ RDBMS, NoSQL 2가지로 나눌 수 있다.
 
 캐시 계층은 데이터가 잠시 보관되는 곳으로 데이터베이스보다 훨씬 빠르다.
 
-![[Pasted image 20250321101904.png]]
+![image](https://github.com/user-attachments/assets/d32ee1eb-5282-4f3c-b81d-47abaf1fc5ee)
 
 1. 요청을 받은 웹 서버는 캐시에 응답이 저장되어 있는지를 확인한다.
 2. 만일 저장되어 있다면 해당 데이터를 클라이언트에 반환한다.
@@ -155,11 +155,11 @@ RDBMS, NoSQL 2가지로 나눌 수 있다.
 
 CDN은 정적 콘텐츠를 전송하는 데 쓰이는, 지리적으로 분산된 서버의 네트워크이다. 이미지, 비디오, CSS, JavaScript 파일 등을 캐시할 수 있다.
 
-![[Pasted image 20250321131348.png]]
+![image](https://github.com/user-attachments/assets/1811e37b-0737-4927-8c53-017b046dca5d)
 
 
 
-![[Pasted image 20250321132009.png]]
+![image](https://github.com/user-attachments/assets/890063e1-7aea-4eaa-bd53-8a13f6b7a7ff)
 
 1. 사용자 A가 이미지 URL을 이용해 image.png에 접근한다.
 2. CDN 서버의 캐시에 해당 이미지가 없는 경우, 서버는 원본 서버에 요청하여 파일을 가져온다.
@@ -189,7 +189,7 @@ CDN은 정적 콘텐츠를 전송하는 데 쓰이는, 지리적으로 분산된
 
 #### CDN + 캐시
 
-![[Pasted image 20250321133747.png]]
+![image](https://github.com/user-attachments/assets/f7af825b-2c51-40fc-a930-663472559999)
 
 
 1. 정적 컨텐츠(JS, CSS, 이미지)는 더 이상 웹 서버를 통해 서비스하지 않으며, CDN을 통해 제공하여 더 나은 성능을 보장한다.
@@ -203,7 +203,7 @@ HTTP 같은 경우는 stateless 하기 때문에 세션 같은 정보는 저장�
 
 #### 세션은 요청에 대한 Context다.
 
-![[Pasted image 20250321134635.png]]
+![image](https://github.com/user-attachments/assets/9004545c-75cb-4104-820b-4febd9a9cc8f)
 
 위와 같이 세션 저장소를 서버 내부 메모리를 사용하지 않고, `RDBMS` or `Redis/Memcached`와 같은 외부 공유 저장소이다.
 
@@ -226,7 +226,7 @@ HTTP 같은 경우는 stateless 하기 때문에 세션 같은 정보는 저장�
 
 #### 무상태 웹 계층으로 기존 설계를 변경
 
-![[Pasted image 20250321141520.png]]
+![image](https://github.com/user-attachments/assets/8715f3e1-4895-4bd1-9b95-68358f709cd5)
 
 - 세션 데이터를 웹 계층으로 분리, 지속성 데이터 보관소를에 저장하도록 만들었다.
 - 공유 저장소는 관계형 데이터베이스, Memcached/Redis 캐시 시스템, NoSQL일 수 있다.
@@ -237,7 +237,7 @@ HTTP 같은 경우는 stateless 하기 때문에 세션 같은 정보는 저장�
 
 장애가 없는 상황에서 사용자는 가장 가까운 데이터 센터로 안내되는데, 통상 이 절차를 지리적 라우팅이라고 부른다.
 
-![[Pasted image 20250321142516.png]]
+![image](https://github.com/user-attachments/assets/37ad6a6e-885b-4421-93dd-122fd2140ce8)
 
 만약 데이터 센터 중 하나에 심각한 장애가 발생하면 모든 트래픽은 장애가 없는 데이터 센터로 전송된다.
 
@@ -249,7 +249,7 @@ HTTP 같은 경우는 stateless 하기 때문에 세션 같은 정보는 저장�
 
 ## 메시지 큐
 
-![[Pasted image 20250321143005.png]]
+![image](https://github.com/user-attachments/assets/a2e270b2-273b-4e40-8c62-0b001e36a452)
 
 메시지 큐는 메시지의 무손실, 즉 메시지 큐에 일단 보관된 메시지는 소비자가 꺼낼 때까지 안전히 보관된다는 특성을 보장하는 비동기 통신을 지원하는 컴포넌트이다.
 
@@ -272,7 +272,7 @@ Publish/Producer 는 메시지 큐에 발행한다. 큐에는 보통 Consumer / 
 
 #### 메시지 큐, 로그, 메트릭, 자동화를 반영하여 수정한 설계
 
-![[Pasted image 20250321144133.png]]
+![image](https://github.com/user-attachments/assets/27320121-9c70-4770-83e6-7fd556def041)
 
 1. 메시지 큐는 각 컴포넌트가 보다 느슨한 결합이 될 수 있도록 하고, 결함에 대한 내성을 높인다.
 2. 로그, 모니터링, 메트릭, 자동화 등을 지원하기 위한 장치를 추가하였다.
@@ -283,7 +283,7 @@ Publish/Producer 는 메시지 큐에 발행한다. 큐에는 보통 Consumer / 
 저장할 데이터가 많아지면 데이터베이스에 대한 부하도 증가한다. 규모를 확장하는 데는 두 가지 접근법이 있다. 하나는 수직적 규모 확장법이고 다른 하나는 수평적 규모 확장법이다.
 
 
-![[Pasted image 20250321145117.png]]
+![image](https://github.com/user-attachments/assets/95cb591e-6c49-4d60-9f16-90b2cce9735f)
 
 데이터베이스에도 수직적 확장보다는 수평적 확장인 **샤딩**이 적절하다.
 샤딩은 대규모 데이터베이스를 샤드라고 부르는 작은 단위로 분할하는 기술을 말한다.
@@ -305,7 +305,7 @@ Publish/Producer 는 메시지 큐에 발행한다. 큐에는 보통 Consumer / 
 
 #### 데이터베이스 샤딩을 적용한 아키텍처
 
-![[Pasted image 20250321150901.png]]
+![image](https://github.com/user-attachments/assets/e7cf4856-0a10-4485-aeb0-ed8ee3bd6e9c)
 
 
 ### 정리
