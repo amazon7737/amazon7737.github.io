@@ -39,18 +39,18 @@ key: 2025-03-26 study
 - 클라이언트 측
     - 위변조가 가능하여 권장하지 않는다.
 
-![[Pasted image 20250326134026.png]]
+![image](https://github.com/user-attachments/assets/0a520c98-5cf4-43aa-8fad-00dc142345eb)
 
 
 - 서버 측
     - 중앙화해서 관리한다.
-      ![[Pasted image 20250326134041.png]]
+![image](https://github.com/user-attachments/assets/73ef4717-108b-4f96-b5b9-a69be753d671)
 
 - 미들웨어
 - MSA 인 경우, 처리율 제한 장치는 보통 API Gateway 에 구현한다.
 - API Gateway : 처리율 제한, SSL 종단, 사용자 인증, IP 허용 목록 관리 등
 
-![[Pasted image 20250326134053.png]]
+![image](https://github.com/user-attachments/assets/13754840-be06-4edf-9530-190c5995e38d)
 
 
 #### 요약
@@ -67,15 +67,15 @@ key: 2025-03-26 study
 
 #### 토큰 버킷 알고리즘
 
-![[Pasted image 20250326135054.png]]
+![image](https://github.com/user-attachments/assets/0859bd27-1d74-45f0-9e88-4cb323bb7f03)
 
 - 토큰이 주기적으로 채워진다.
 - 각 요청이 처리될 때마다 하나의 토큰을 사용한다.
 - 토큰이 없다면 해당 요청은 버려진다.
 
-![[Pasted image 20250326135212.png]]
+![image](https://github.com/user-attachments/assets/8e28267f-e398-4906-8b4b-24e813f5cc8c)
 
-![[Pasted image 20250326135359.png]]
+![image](https://github.com/user-attachments/assets/4303ac3a-240c-443a-9a2e-928f4480445b)
 
 - 토큰을 어떻게 버킷에서 꺼내는지
     - 4개의 토큰으로 시작
@@ -128,7 +128,7 @@ ex) 휴면계정으로 전환
 ### 누출 버킷 알고리즘
 
 
-![[Pasted image 20250326140541.png]]
+![image](https://github.com/user-attachments/assets/3e9cd8f3-bf11-4c9f-bcee-dd93a94fb516)
 
 - 요청이 들어오면 큐가 가득 차 있는지 체크한다.
 - 빈 자리가 있다면 큐에 요청을 추가한다.
@@ -165,7 +165,7 @@ ex) 휴면계정으로 전환
 
 ### 예시
 
-![[Pasted image 20250326141927.png]]
+![image](https://github.com/user-attachments/assets/987d1cef-b430-434f-a7d1-0ef7413568fa)
 
 - 타임라인 시간 단위는 1초
 - 초당 3개까지의 요청만을 허용
@@ -176,7 +176,7 @@ ex) 휴면계정으로 전환
 왜그럴까
 
 
-![[Pasted image 20250326141656.png]]
+![image](https://github.com/user-attachments/assets/39a36c9f-25df-45f4-b41e-a3088f3a3aed)
 
 - 분당 최대 5개의 요청만을 허용
 - 카운터는 매분마다 초기화
@@ -204,7 +204,7 @@ ex) 휴면계정으로 전환
 - 허용치보다 크면 처리 거부
 
 
-![[Pasted image 20250326142741.png]]
+![image](https://github.com/user-attachments/assets/26516855-5b36-4748-87c0-853160803431)
 
 - 분당 최대 2회의 요청만을 처리
 - 요청이 1:00:01에 도착하였을때, 로그는 비어있는 상태, 요청이 허용됨
@@ -235,7 +235,7 @@ ex) 휴면계정으로 전환
     - 현재 1분간의 요청 수 + 직전 1분간의 요청 수 X 이동 윈도와 직전 1분이 겹치는 비율
 
 
-![[Pasted image 20250326143551.png]]
+![image](https://github.com/user-attachments/assets/38958f27-c4ca-413d-acb7-baee96ca2196)
 
 - 처리율 제한 장치 한도가 분당 7개 요청으로 설정
 - 이전 1분 동안 5개의 요청이, 현재 1분 동안 3개의 요청이 왔다고 가정.
@@ -271,7 +271,7 @@ ex) 휴면계정으로 전환
 INCR : 카운터값 + 1
 EXPIRE : 카운터 타임아웃 설정, 시간이 지나면 자동 삭제
 
-![[Pasted image 20250326145507.png]]
+![image](https://github.com/user-attachments/assets/1c21fa78-5b85-4361-8cd3-1a39ac69454e)
 
 - 클라이언트가 처리율 제한 미들웨어에게 요청을 보냄
 - 처리율 제한 미들웨어는 레디스의 지정 버킷에서 카운터를 가져와서 한도에 도달했는지 검사
@@ -299,7 +299,7 @@ EXPIRE : 카운터 타임아웃 설정, 시간이 지나면 자동 삭제
 
 #### 상세 설계
 
-![[Pasted image 20250326152345.png]]
+![image](https://github.com/user-attachments/assets/4200dd21-fb3c-48db-837d-5b9b7a2bf8c1)
 
 - 처리율 제한 규칙은 디스크에 보관, 작업 프로세스는 수시로 규칙을 디스크에서 읽어 캐시에 저장
 - 클라이언트가 요청을 서버에 보내면 처리율 제한 미들웨어에 도달
@@ -327,7 +327,7 @@ EXPIRE : 카운터 타임아웃 설정, 시간이 지나면 자동 삭제
 - counter + 1 의 값이 임계치를 넘는지 본다.
 - 넘지 않는다면 레디스에 보관된 카운터 값을 1만큼 증가시킨다.
 
-![[Pasted image 20250326152845.png]]
+![image](https://github.com/user-attachments/assets/32caf90f-09ae-4120-9e0e-e13661309030)
 
 - counter 의 값이 3이라고 하면, 두 개 요청을 처리하는 스레드가 각각 병렬로 counter 값을 읽었으며 그 둘 가운데 어느 쪽도 아직 변경된 값을 저장하지는 않은 상태라 하자.
 - 둘 다 다른 요청의 처리 상태는 상관하지 않고 counter + 1 한 값을 레디스에 기록할 것이다. 그리고 올바르게 변경되었따고 믿을 것이다. 하지만 사실 Counter 의 값은 5가 되어야 한다.
@@ -340,7 +340,7 @@ EXPIRE : 카운터 타임아웃 설정, 시간이 지나면 자동 삭제
 
 #### 동기화 이슈
 
-![[Pasted image 20250326153916.png]]
+![image](https://github.com/user-attachments/assets/505b9db6-92c4-4cb7-9ee6-4c03079ac88a)
 
 ##### 이슈
 
@@ -351,7 +351,7 @@ EXPIRE : 카운터 타임아웃 설정, 시간이 지나면 자동 삭제
 1. Sticky Session 을 사용하여 같은 클라이언트로부터 요청은 항상 같은 처리율 제한 장치로 보낼 수 있도록 할 수 있다. 단, 규모면에서 확장 가능하지 않아 추천하지 않는다.
 
 2. 레디스와 같은 중앙 집중형 데이터 저장소를 쓰는 것이다.
-   ![[Pasted image 20250326153932.png]]
+![image](https://github.com/user-attachments/assets/2b3b8a9c-ebb4-42dc-90af-aab380f5c988)
 
 #### 성능 최적화
 
