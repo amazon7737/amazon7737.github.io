@@ -38,6 +38,10 @@ key: 2025-03-05 study
 | 디스크에서 1MB 순차적으로 read           | 30ms              |
 | 한 패킷의 캘리포니아로부터 네덜란드까지의 왕복 지연시간 | 150ms             |
 
+
+![image](https://github.com/user-attachments/assets/6f11710d-0f06-4396-9c26-f40e9b674370)
+
+
 #### 수치분석의 결론
 
 - 메모리는 빠르지만 디스크는 아직도 느리다.
