@@ -39,12 +39,11 @@ key: 2025-03-26 study
 - 클라이언트 측
     - 위변조가 가능하여 권장하지 않는다.
 
-![image](https://github.com/user-attachments/assets/0a520c98-5cf4-43aa-8fad-00dc142345eb)
-
 
 - 서버 측
     - 중앙화해서 관리한다.
-![image](https://github.com/user-attachments/assets/73ef4717-108b-4f96-b5b9-a69be753d671)
+
+![image](https://github.com/user-attachments/assets/0a520c98-5cf4-43aa-8fad-00dc142345eb)
 
 - 미들웨어
 - MSA 인 경우, 처리율 제한 장치는 보통 API Gateway 에 구현한다.
