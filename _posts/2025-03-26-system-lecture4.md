@@ -256,8 +256,7 @@ ex) 휴면계정으로 전환
 - 하지만 클라우드플레어에서 수행한 실험에 의하면 오탐은 0.003% 에 불과했다고 한다.
 
 
-### 참고문헌9:
-https://medium.com/@saisandeepmopuri/system-design-rate-limiter-and-data-modelling-9304b0d18250
+[참고문헌9](https://medium.com/@saisandeepmopuri/system-design-rate-limiter-and-data-modelling-9304b0d18250)
 
 
 #### 개략적인 아키텍처
