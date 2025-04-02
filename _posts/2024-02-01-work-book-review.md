@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 일은 배신하지 않는다를 읽고
+title: 일은 배신하지 않는다
 tags: ["study"]
 date: 2024-02-01T00:00:00+09:00
 key: 2024-02-01 study
