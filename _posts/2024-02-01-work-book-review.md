@@ -6,7 +6,7 @@ date: 2024-02-01T00:00:00+09:00
 key: 2024-02-01 study
 ---
 
-![[Pasted image 20250327204128.png]]
+![image](https://github.com/user-attachments/assets/2888ae87-5eac-4078-90f7-5c096d67b1b3)
 
 p446
 
