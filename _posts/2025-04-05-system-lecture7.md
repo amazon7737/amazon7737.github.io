@@ -2,7 +2,7 @@
 layout: post
 title: ch07 대규모 시스템 설계 기초
 tags: ["study"]
-date: 2024-04-05T00:00:00+10:00
+date: 2025-04-05T00:00:00+10:00
 key: 2025-04-05 study
 ---
 
@@ -28,7 +28,7 @@ key: 2025-04-05 study
 
 #### 다중 마스터 복제(multi-master replication)
 
-![[Pasted image 20250403221105.png]]
+![image](https://github.com/user-attachments/assets/204f1540-e441-4276-bddc-1a98680d963c)
 
 데이터베이스의 auto_increment 기능을 활용
 ID 값을 k만큼 증가시킴
@@ -46,7 +46,7 @@ k : 데이터 베이스 서버의 수
 
   충돌 가능성이 지극히 낮음
 
-![[Pasted image 20250403221720.png]]
+![image](https://github.com/user-attachments/assets/fdf26c2c-18bb-4f52-906a-ce9661540f90)
 
 ##### 장점
 
@@ -64,7 +64,7 @@ k : 데이터 베이스 서버의 수
 
 플리커(Flicker) 서비스는 분산 기본 키(distributed primary key)를 만들어 내기 위해 사용 중
 
-![[Pasted image 20250403221734.png]]
+![image](https://github.com/user-attachments/assets/d5b91e5d-40fd-4e57-90a3-6483180b2e83)
 
 ##### 장점
 
@@ -78,7 +78,7 @@ k : 데이터 베이스 서버의 수
 
 #### 트위터 스노플레이크 접근법
 
-![[Pasted image 20250403222014.png]]
+![image](https://github.com/user-attachments/assets/55149625-db9d-4316-afaa-873acb577af5)
 
 - 사인(sign) 비트 : 1비트, 음수 양수 구별
 - 타임스탬프(timestamp) : 41비트, 기원 시각(epoch) 이후 몇 밀리초(ms)가 경과했는지 나타내는 값, ex) 1288834974657(Nov 04, 2010, 01:41:54 UTC)
@@ -90,7 +90,7 @@ k : 데이터 베이스 서버의 수
 
 #### 타임스탬프
 
-![[Pasted image 20250403222550.png]]
+![image](https://github.com/user-attachments/assets/26472d3a-d056-4af7-bc53-e517a2afffb7)
 
 타임스탬프는 시간의 흐름에 따라 점점 큰 값이 되어, 시간 순 정렬이 가능하다.
 41비트로 표현할 수 있는 타임스탬프의 최댓값 : 2^41 -1 = 2199023255551 ms , 대략 69년
@@ -120,8 +120,5 @@ k : 데이터 베이스 서버의 수
 
 
 - 고가용성(high availability) : ID 생성기는 필수 불가결(mission critical) 컴포넌트이므로 높은 가용성을 제공한다.
-
-
-
 
 
