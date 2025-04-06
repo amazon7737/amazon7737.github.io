@@ -2,7 +2,7 @@
 layout: post
 title: ch08 대규모 시스템 설계 기초
 tags: ["study"]
-date: 2024-04-05T00:00:00+11:00
+date: 2025-04-05T00:00:00+11:00
 key: 2025-04-05 study
 ---
 
@@ -45,11 +45,11 @@ GET /api/v1/shortUrl
 
 **URL 리디렉션**
 
-![[Pasted image 20250404144604.png]]
+![image](https://github.com/user-attachments/assets/ada076e8-3345-401b-8c01-415d78c24481)
 
 단축 URL을 받은 서버는 원래 URL로 바꾸어서 301 응답의 Location 헤더에 넣어 반환
 
-![[Pasted image 20250404144648.png]]
+![image](https://github.com/user-attachments/assets/31cda262-4f8d-4940-b66f-801feaf9689d)
 
 #### 301응답과 302응답의 차이
 
@@ -78,7 +78,7 @@ GET /api/v1/shortUrl
 
 **URL 단축**
 
-![[Pasted image 20250404145307.png]]
+![image](https://github.com/user-attachments/assets/a5e54f2b-8313-49f4-9f28-f874e40c14ca)
 
 위 해시함수는 아래와 같은 요구사항을 만족해야 한다
 
@@ -99,7 +99,7 @@ GET /api/v1/shortUrl
 
 따라서, <단축 URL, 원래 URL> 의 순서쌍을 데이터베이스에 저장하는 방법이 있음
 
-![[Pasted image 20250404150044.png]]
+![image](https://github.com/user-attachments/assets/2f5aa1c2-7cfe-4e8c-842f-108e19f2870a)
 
 ##### 해시 함수
 
@@ -116,7 +116,7 @@ GET /api/v1/shortUrl
 총 62개의 문자를 사용가능
 
 
-![[Pasted image 20250404150303.png]]
+![image](https://github.com/user-attachments/assets/71251d82-5837-4c78-ab74-77bc37f47fe8)
 
 62^n >= 3650억 내에서 hashValue 길이를 정해볼 수 있을 것이다.
 
@@ -125,13 +125,13 @@ GET /api/v1/shortUrl
 
 ##### 해시 후 충돌 해소
 
-![[Pasted image 20250404150502.png]]
+![image](https://github.com/user-attachments/assets/abc2782d-942d-4e20-a9a3-22c84c61088f)
 
 긴 URL을 줄이기 위해서는 원래 URL을 7글자 문자열로 줄이는 해시함수가 필요함
 
 CRC32가 계산한 가장 짧은 해시값이 7보다는 길다. 어떻게 하면 줄일 수 있을까?
 
-![[Pasted image 20250405175044.png]]
+![image](https://github.com/user-attachments/assets/820d2036-30b6-4deb-ad08-9991c21886c4)
 
 #### 방법1
 
@@ -159,7 +159,7 @@ hashValue에 사용할 수 있는 문자 개수가 62개이기 때문
 - 0-9 , A-Z(10-61)
 - 11157(10진수) = 2 x 62^2 + 55 x 62 ^1 + 59 x 62 ^ 0 = [2, 55, 59] => [2, T, X] => 2TX(62진수)이다.
 
-![[Pasted image 20250405210032.png]]
+![image](https://github.com/user-attachments/assets/9f110fdc-1a92-41f8-830f-f108494811b8)
 
 | 해시 후 충돌 해소 전략                                          | base-62 변환                                                                  |
 | ------------------------------------------------------- | --------------------------------------------------------------------------- |
@@ -170,7 +170,7 @@ hashValue에 사용할 수 있는 문자 개수가 62개이기 때문
 
 #### URL 단축기 상세 설계
 
-![[Pasted image 20250405210342.png]]
+![image](https://github.com/user-attachments/assets/44280894-0310-4b29-93a4-f3d0966d8a08)
 
 1. 입력으로 긴 URL을 받는다.
 2. 데이터베이스에 해당 URL이 있는지 검사한다.
@@ -182,11 +182,11 @@ hashValue에 사용할 수 있는 문자 개수가 62개이기 때문
 
 예제
 
-![[Pasted image 20250405210550.png]]
+![image](https://github.com/user-attachments/assets/6b23bcfe-8e82-40ef-b946-9514449c4433)
 
 **URL 리디렉션 상세 설계**
 
-![[Pasted image 20250405210915.png]]
+![image](https://github.com/user-attachments/assets/6fe9c295-0a2f-4447-b1d1-d0b461e885b1)
 
 쓰기보다 읽기를 더 자주 하는 시스템이어서, 캐시에 저장하여 성능을 높임
 
