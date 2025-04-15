@@ -64,7 +64,7 @@ GET /v1/me/feed
 
 Authorization 헤더 : API 호출 인증
 
-![[Pasted image 20250410150242.png]]
+![image](https://github.com/user-attachments/assets/482ad933-08b1-4b91-9224-4a2e22493898)
 
 - 사용자 : 모바일 앱, 브라우저 , POST /v1/me/feed 로 요청중
 - 로드밸런서(load balancer) : 웹서버 트래픽 분산
@@ -75,7 +75,7 @@ Authorization 헤더 : API 호출 인증
 
 ##### 뉴스 피드 생성
 
-![[Pasted image 20250410150625.png]]
+![image](https://github.com/user-attachments/assets/9e12270c-014a-4990-9019-64127183371b)
 
 - 사용자: GET /v1/me/feed API 사용
 - 로드밸런서(load balancer) : 웹서버 트래픽 분산
@@ -100,7 +100,7 @@ Authorization 헤더 : API 호출 인증
 
 - 팬아웃(fanout) : 어떤 사용자의 새 포스팅을 친구에게 전달하는 과정
 
-![[Pasted image 20250410151013.png]]
+![image](https://github.com/user-attachments/assets/0992fc95-51e8-4dcd-b657-f0b22bfb946b)
 
 **쓰기시점에 팬아웃하는 모델**
 : 새로운 포스팅을 기록하는 시점에 뉴스 피드를 갱신, 사용자의 캐시에 포스팅을 기록하는 것
@@ -137,7 +137,7 @@ Authorization 헤더 : API 호출 인증
 
 추가로 안정해시를 통해 요청과 데이터를 보다 고르게 분산하여 핫키 문제를 줄여볼 수 있다.
 
-![[Pasted image 20250410151704.png]]
+![image](https://github.com/user-attachments/assets/548983df-adfd-4480-ac51-12587e0aff37)
 
 1. 그래프 데이터베이스에서 친구 ID 목록 가져오기
 - 그래프 데이터베이스는 친구 관계, 추천을 관리하기 적합
@@ -158,7 +158,7 @@ Authorization 헤더 : API 호출 인증
 
 #### 피드 읽기 흐름 상세 설계
 
-![[Pasted image 20250410152117.png]]
+![image](https://github.com/user-attachments/assets/e0fa9f9b-cc71-4d52-a89f-9aef5a6a383a)
 
 1. 사용자가 뉴스 피드 읽기 요청
 2. 로드밸런서가 요청을 웹서버 중 하나로 전송
@@ -171,7 +171,7 @@ Authorization 헤더 : API 호출 인증
 
 캐시는 뉴스 피드시스템의 핵심 컴포넌트이다.
 
-![[Pasted image 20250410152316.png]]
+![image](https://github.com/user-attachments/assets/93eac908-d82e-4e00-ac21-a4d9119eecbb)
 
 캐시를 5계층으로 나눈다.
 
