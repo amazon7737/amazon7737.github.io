@@ -43,7 +43,7 @@ key: 2025-04-15 study
 - 검색창에 글자를 입력할때마다 클라이언트가 백엔드에게 요청을 보냄, 평균 1회 검색당 20건의 요청
 
 ![image](https://github.com/user-attachments/assets/88bc2159-9425-4289-8671-87aca053fbfa)
-![image](https://github.com/user-attachments/assets/81d3e8b6-3eb4-4f70-93ad-b89ab7a1f703)
+<br/> ![image](https://github.com/user-attachments/assets/81d3e8b6-3eb4-4f70-93ad-b89ab7a1f703)
 
 - 초당 24,000건의 질의(QPS)가 발생 ( = 10,000,000 사용자 X 10질의/일 X 20자 / 24시간 / 3600초)
 - 최대 QPS = QPS X 2 = 대략 48,000
