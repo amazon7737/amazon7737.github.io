@@ -1,6 +1,6 @@
 ---
 layout: post
-title: ch10 대규모 시스템 설계 기초
+title: ch11 대규모 시스템 설계 기초
 tags: ["study"]
 date: 2025-04-11T00:00:00+11:00
 key: 2025-04-11 study
