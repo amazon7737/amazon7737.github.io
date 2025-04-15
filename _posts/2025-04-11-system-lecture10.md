@@ -34,7 +34,7 @@ key: 2025-04-11 study
 
 ##### ios 푸시 알림
 
-![[Pasted image 20250410135156.png]]
+![image](https://github.com/user-attachments/assets/1ca9f526-1ef6-417c-8513-5c905bc96132)
 
 - 알림 제공자(provider) : 요청을 만들어 애플 푸시 알림 서비스(APNS : Apple Push Notification Service)로 보냄
     - 단말 토큰(device token) : 고유 식별자
@@ -49,31 +49,31 @@ key: 2025-04-11 study
 
 FCM(Firebase Cloud Messaging)을 사용함
 
-![[Pasted image 20250410135634.png]]
+![image](https://github.com/user-attachments/assets/e12651e4-738e-4866-9289-7fa2e7b3f166)
 
 ##### SMS 메시지
 
 제3사업자 서비스 트월리오(Twilio) , 넥스모(Nexmo) 을 많이 이용
 이용요금 발생
 
-![[Pasted image 20250410135642.png]]
+![image](https://github.com/user-attachments/assets/9bdd6532-cbfc-4bf5-b5bd-721bd7fe2347)
 
 ##### 이메일
 
 센드그리드(Sendgrid), 메일침프(Mailchimp)
 
-![[Pasted image 20250410135651.png]]
+![image](https://github.com/user-attachments/assets/296bd742-eff5-46da-80e7-4713d4981c8e)
 
 ##### 연락처 정보 수집 절차
 
-![[Pasted image 20250410135714.png]]
+![image](https://github.com/user-attachments/assets/9960ec3a-2823-4682-bdd5-ed5342ef3928)
 
 - 알림을 보내기 위해서는
 - 모바일 단말 토큰, 전화번호, 이메일 주소 등의 정보가 필요
 - 앱 설치, 계정 등록때, 사용자의 정보를 수집하여 데이터베이스에 저장
 
 
-![[Pasted image 20250410135937.png]]
+![image](https://github.com/user-attachments/assets/abecfddc-26fe-4530-9507-e33b9e8457aa)
 
 - 이메일 주소, 전화번호를 user 테이블에 저장
 - 단말 토큰을 device 테이블에 저장
@@ -84,7 +84,7 @@ FCM(Firebase Cloud Messaging)을 사용함
 
 **개략적 설계안(초안)**
 
-![[Pasted image 20250410140245.png]]
+![image](https://github.com/user-attachments/assets/9efa9b62-2ba3-43ce-ab2c-4c61b4bfefcb)
 
 - N개의 서비스(마이크로서비스, 크론잡, 분산 시스템 컴포넌트)
     - ex) 납기일을 알리는 과금 서비스, 배송알림을 보내는 쇼핑몰
@@ -113,7 +113,7 @@ ex) FCM은 중국에서 한정된 서비스만 사용가능하다 (제이푸시,
 - 알림 서버 증설, 자동으로 수평적 규모 확장되도록
 - 메시지 큐를 이용해 시스템 컴포넌트 사이 강한 결합 끊기
 
-![[Pasted image 20250410142315.png]]
+![image](https://github.com/user-attachments/assets/5cd57cd2-56c2-4e4d-84b5-4c9b4093f913)
 
 컴포넌트들 설명
 - N개의 서비스 : API를 통해 알림을 보냄
@@ -155,7 +155,7 @@ ex) FCM은 중국에서 한정된 서비스만 사용가능하다 (제이푸시,
 
 알림 데이터를 데이터베이스에 보관, 재시도 메커니즘을 구현
 
-![[Pasted image 20250410143730.png]]
+![image](https://github.com/user-attachments/assets/99ecadfc-b1eb-4629-a976-84a68ca2778a)
 
 알림 로그 데이터베이스를 유지하는 것
 
@@ -238,7 +238,7 @@ ios, 안드로이드 앱의 경우,
 
 작업 서버를 증설하는게 바람직 할것이다.
 
-![[Pasted image 20250410144813.png]]
+![image](https://github.com/user-attachments/assets/9e5e0735-bdf2-456a-a8f4-bfa81ede931a)
 
 ##### 이벤트 추적
 
@@ -250,13 +250,13 @@ ios, 안드로이드 앱의 경우,
 
 데이터 분석 서비스는 보통 이벤트 추적 기능을 제공
 
-![[Pasted image 20250410144935.png]]
+![image](https://github.com/user-attachments/assets/c53a6572-66c8-498c-b34b-95383733cddf)
 
 - 데이터 분석 서비스를 통해 추적할 알림 시스템 이벤트
 
 ##### 수정된 설계안
 
-![[Pasted image 20250410145002.png]]
+![image](https://github.com/user-attachments/assets/dd4a25de-32a1-4d1f-86fa-da7f92fc4206)
 
 - 알림 서버에 인증, 전송률 제한 기능 추가
 - 전송 실패에 대응하기 위한 재시도 기능 추가
