@@ -2,7 +2,7 @@
 layout: post
 title: ch14 대규모 시스템 설계 기초
 tags: ["study"]
-date: 2025-04-25T00:00:00+09:00
+date: 2025-04-25T00:00:00+10:00
 key: 2025-04-25 study
 ---
 
