@@ -8,7 +8,7 @@ key: 2025-04-25 study
 
 ## 구글 드라이브 설계
 
-![[Pasted image 20250423205004.png]]
+![image](https://github.com/user-attachments/assets/09c41cff-d132-4b2d-8966-02c7c4f88ce0)
 
 ### 1단계 문제 이해 및 설계 범위 확정
 
@@ -67,7 +67,7 @@ key: 2025-04-25 study
     - 이 파일들은 원래 파일과 같은 이름을 가짐
     - 각 파일과 폴더는 상대 경로를 네임스페이스 이름과 결합하면 유일하게 식별할 수 있음
 
-![[Pasted image 20250423215350.png]]
+![image](https://github.com/user-attachments/assets/0d0ab279-7aa8-4cae-8c6e-3c820afdd35c)
 
 #### API
 
@@ -125,7 +125,7 @@ SSL(Secure Socket Layer)를 지원하는 프로토콜을 이용하는 이유
 
 #### 한대 서버의 제약 극복
 
-![[Pasted image 20250423221802.png]]
+![image](https://github.com/user-attachments/assets/4c1a0bb1-e491-400e-915e-e9f6a0c1bded)
 
 업로드 하다보면 가득 차게 되는데
 
@@ -135,7 +135,7 @@ SSL(Secure Socket Layer)를 지원하는 프로토콜을 이용하는 이유
 
 샤딩 하여 여러 서버에 나누어 저장
 
-![[Pasted image 20250423221859.png]]
+![image](https://github.com/user-attachments/assets/a55b8bb3-a2a1-4099-bfd2-d2a619b1618d)
 
 서버 장애가 생기면 데이터를 잃을 수 있다.
 
@@ -149,7 +149,7 @@ S3는 다중화를 지원함, 같은 지역 안에서 다중화를 할 수도 �
 
 
 
-![[Pasted image 20250423222057.png]]
+![image](https://github.com/user-attachments/assets/3d3d1009-170a-4b12-9f11-67f89347a94c)
 
 같은 지역 안에서 다중화를 할 수도 있고, 여러 지역에 걸쳐 다중화를 할 수도 있다.
 
@@ -159,7 +159,7 @@ S3는 다중화를 지원함, 같은 지역 안에서 다중화를 할 수도 �
 
 ##### 개선할 부분을 추가로 찾아보기
 
-![[Pasted image 20250423222307.png]]
+![image](https://github.com/user-attachments/assets/7d0faabb-f531-430e-9d20-d5eedd14a420)
 
 - 로드밸런서, 웹 서버 : 트래픽 고르게 분산 및 장애 난 서버 우회
 - 메타데이터 데이터베이스 : 데이터베이스, 파일 저장 서버를 분리하여 SPOF를 회피, 다중화 샤딩 고려해볼 수 있음
@@ -179,7 +179,7 @@ S3는 다중화를 지원함, 같은 지역 안에서 다중화를 할 수도 �
 
 먼저 처리되는 변경은 성공한 것으로 보고, 나중에 처리되는 변경은 충돌이 발생한 것으로 표시
 
-![[Pasted image 20250423222826.png]]
+![image](https://github.com/user-attachments/assets/d01f206e-f680-4755-bee9-6e128db8bd87)
 
 - 사용자 1과 2는 같은 파일을 동시에 갱신하려함
 - 시스템은 사용자 1의 파일을 먼저 처리
@@ -188,13 +188,13 @@ S3는 다중화를 지원함, 같은 지역 안에서 다중화를 할 수도 �
 - 사용자 2가 가지고 있는 로컬 사본과 서버에 있는 최신 버전이 그것임
 - 사용자는 두 파일을 하나로 합칠지 아니면 둘 중 하나를 다른 파일로 대체할지 결정해야함
 
-![[Pasted image 20250423223047.png]]
+![image](https://github.com/user-attachments/assets/d02387df-d877-4089-a2e9-12411a7d2afe)
 
 '[4]''[5]' 참고
 
 #### 개략적 설계안
 
-![[Pasted image 20250423225220.png]]
+![image](https://github.com/user-attachments/assets/1bd0f064-5ef4-4b44-9fd4-4312fed4f341)
 
 - 사용자 단말 : 웹 브라우저, 모바일 앱
 - 블록 저장소 서버(Block servers) : 파일 블록을 클라우드 저장소에 업로드 하는 서버
@@ -241,7 +241,7 @@ S3는 다중화를 지원함, 같은 지역 안에서 다중화를 할 수도 �
 
 블록 저장소 서버는 파일 업로드에 관련된 어려운 일을 처리하는 컴포넌트.
 
-![[Pasted image 20250423230114.png]]
+![image](https://github.com/user-attachments/assets/e801d4d2-2b4f-414e-90e9-78760a245ee6)
 
 - 주어진 파일을 작은 블록들로 분할(split)
 - 각 블록을 압축(compress)
@@ -249,7 +249,7 @@ S3는 다중화를 지원함, 같은 지역 안에서 다중화를 할 수도 �
 - 클라우드 저장소로 보냄
 
 
-![[Pasted image 20250423230221.png]]
+![image](https://github.com/user-attachments/assets/62f4312f-b8c9-483e-8d3d-5eee037e2602)
 
 - 검정색이 수정된 블록, 갱신된 부분만 동기화해야 하므로 해당 블록들을 클라우드 저장소로 업로드
 
@@ -278,7 +278,7 @@ RDB는 ACID를 보장하기에 강환 일관성을 보장하기 쉬움
 
 #### 메타데이터 데이터베이스
 
-![[Pasted image 20250423230749.png]]
+![image](https://github.com/user-attachments/assets/536c0e14-8e8a-4bb6-936d-51d3c4c75757)
 
 
 - user : 이름, 이메일, 프로파일 사진
@@ -291,7 +291,7 @@ RDB는 ACID를 보장하기에 강환 일관성을 보장하기 쉬움
 
 #### 업로드 절차
 
-![[Pasted image 20250423230949.png]]
+![image](https://github.com/user-attachments/assets/2d7e94f0-fae4-4b32-a23e-4f0a7c4da3ef)
 
 두 개 요청이 병렬적으로 전송된 상황을 보여줌
 첫번째 요청은 파일 메타데이터를 추가하기 위한 것
@@ -319,7 +319,7 @@ RDB는 ACID를 보장하기에 강환 일관성을 보장하기 쉬움
 - A가 접속중, 다른 클라이언트가 파일 변경하면 알림 서비스가 A에게 변경이 발생해서 새 버전을 끌어가야 한다고 알림
 -  A가 네트워크 연결 상태가 아닐 경우, 데이터는 캐시에 보관, 상태가 접속 중으로 바뀌면 새 버전을 가져감
 
-![[Pasted image 20250423231620.png]]
+![image](https://github.com/user-attachments/assets/cebf9218-897e-4683-b20f-915c296aa30a)
 
 어떤 파일이 변경되었음을 감지한 클라이언트는 API서버를 통해 메타데이터를 새로 가져와야 하고, 그 다음 블록들을 다운받아 파일을 재구성해야 한다.
 
